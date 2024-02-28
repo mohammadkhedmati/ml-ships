@@ -1,0 +1,7 @@
+train: Object_detection\total_ds_train_imgs_yolo # train images (relative to 'path') 128 images
+val: Object_detection\total_ds_val_imgs_yolo # val images (relative to 'path') 128 images
+test: Object_detection\total_ds_test_imgs_yolo # val images (relative to 'path') 128 images
+
+# Classes
+nc: 5 # number of classes
+names: ["ship 1", "ship 2", "ship 3", "ship 4", ship 5"] # class names
