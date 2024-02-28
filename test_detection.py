@@ -8,22 +8,28 @@ import ultralytics
 
 image_path = 'Object_detection\\total_ds_test_imgs_yolo\\0-19824.JPEG'
 
-model1 = YOLO("runs\\detect\\ship_detection_yoloV8m3\\weights\\best.pt")
+model1 = YOLO("runs\\detect\\ship_detection_yoloV8m3\\weights\\last.pt")
 model2 = YOLO("runs\\detect\\ship_detection_yoloV8n\\weights\\best.pt")
 
 # results1 = model1.predict(image_path, save_txt=True)
 # results2 = model1.predict(image_path, save_txt=True)
 
 
-metrics = model1()  # evaluate model performance on the validation set
-print(metrics)
-# Validate the model
-# metrics = model2.val()  # no arguments needed, dataset and settings remembered
-# print(metrics.box.map,    # map50-95
-# metrics.box.map50,  # map50
-# metrics.box.map75,  # map75
-# metrics.box.maps   # a list contains map50-95 of each category
-# )
+if __name__ == '__main__': 
+    # print(metrics)
+    # Validate the model
+    metrics1 = model1.val()  # evaluate model performance on the validation set
+    print(metrics1.box.map,    # map50-95
+    metrics1.box.map50,  # map50
+    metrics1.box.map75,  # map75
+    metrics1.box.maps   # a list contains map50-95 of each category
+    )
+    metrics2 = model2.val()  # no arguments needed, dataset and settings remembered
+    print(metrics2.box.map,    # map50-95
+    metrics2.box.map50,  # map50
+    metrics2.box.map75,  # map75
+    metrics2.box.maps   # a list contains map50-95 of each category
+    )
 
 
 # from ultralytics.utils.benchmarks import benchmark
