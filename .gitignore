@@ -10,6 +10,7 @@ Object_detection/
 runs/
 yolo_base_weights/
 yolov9/Object_detection/
+datasets/
 yolov9/yolov9-c.pt
 yolov8n.pt
 classification_data.zip
